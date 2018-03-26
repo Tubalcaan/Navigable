@@ -1,6 +1,6 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 
-# navigable
+# Navigable
 navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
 
 ### Segues are cool but... 🤔
@@ -14,7 +14,7 @@ Segues are **very good tools** to represent visual connections between View cont
 Any time you want to push or present a view controller, you have to repeat a few lines of code (that I personnaly never remember). Every time you do this, you have to **check the storyboard name and storyboard ID** of the UIViewController.
 The code is a bit different, and it's hard to search in XCode.
 
-# Using navigable
+# Using Navigable
 ### Context
 * Your app contains 2 UIViewControllers: FirstViewController and SecondViewController
 * FirstViewController contains a button, that leads to SecondViewController. SecondViewController displays the number of taps on the button
@@ -103,5 +103,5 @@ Just pass the custom PresentationConfiguration to the go(to:) function.
 ## Carthage
 To install, simply add the following lines to your Cartfile :
 ```ruby
-github "Tubalcaan/navigable" ~> 1.0
+github "Tubalcaan/Navigable" ~> 1.0
 ```
