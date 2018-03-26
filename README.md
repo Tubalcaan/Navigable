@@ -107,7 +107,7 @@ The go(to:) has more parameters with default values.
 The framework provides a TransitionConfiguration enum that enables you to specify the UIModalTransitionStyle and UIModalPresentationStyle for modal transitions.
 Just pass the custom TransitionConfiguration to the go(to:) function.
 
-### I want to *really* customize the transition
+#### I want to *really* customize the transition
 You can set an object to the TransitionConfiguration transition attribute to make real custom transitions.
 This object must implement the Transition protocol, which contains:
 * transitionDuration(using:): returns the duration of the transition (see UIViewControllerAnimatedTransitioning)
