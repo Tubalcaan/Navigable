@@ -19,7 +19,7 @@ class Router {
     
     private var controllers: [ControllerPresentation] = []
     
-    func go<T: Navigable>(to type: T.Type, from originVC: UIViewController, with params: T.Params, presentationType: PresentationType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
+    func go<T: Navigable>(to type: T.Type, from originVC: UIViewController, with params: T.Params?, presentationType: PresentationType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
         let storyBoard = getStoryboard(T.storyboardIdentifier)
         if let navigable = storyBoard.instantiateViewController(withIdentifier: T.identifier) as? T {
             navigable.configure(with: params)

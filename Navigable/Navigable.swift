@@ -35,11 +35,11 @@ public protocol Navigable {
     static var storyboardIdentifier: String { get }
     static var identifier: String { get }
     
-    func configure(with params: Params)
+    func configure(with params: Params?)
 }
 
 public extension UIViewController {
-    public func go<T: Navigable>(to controllerType: T.Type, with params: T.Params, presentationType: PresentationType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
+    public func go<T: Navigable>(to controllerType: T.Type, with params: T.Params? = nil, presentationType: PresentationType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
         Router.shared.go(to: controllerType, from: self, with: params, presentationType: presentationType, animated: animated, completion: completion)
     }
 }
