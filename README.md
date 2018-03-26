@@ -1,7 +1,7 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 
 # Navigable
-navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
+Navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
 
 ### Segues are cool but... 🤔
 Segues are **very good tools** to represent visual connections between View controllers. But they have few drawbacks:
