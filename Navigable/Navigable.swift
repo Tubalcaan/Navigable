@@ -9,25 +9,36 @@
 import Foundation
 import UIKit
 
-public enum PresentationType {
+public enum TransitionType {
     case push
     case defaultModal
-    case modal(configuration: PresentationConfiguration)
+    case modal(configuration: TransitionConfiguration)
 }
-public struct PresentationConfiguration {
+public struct TransitionConfiguration {
     public var transitionStyle: UIModalTransitionStyle = .coverVertical
     public var presentationStyle: UIModalPresentationStyle = .fullScreen
+    public var transition: Transition? = nil
     
     /// default is coverVertical / fullScreen
-    public static var `default`: PresentationConfiguration {
-        return PresentationConfiguration()
+    public static var `default`: TransitionConfiguration {
+        return TransitionConfiguration()
     }
     
-    public init(transitionStyle: UIModalTransitionStyle = .coverVertical, presentationStyle: UIModalPresentationStyle = .fullScreen) {
+    public init(transitionStyle: UIModalTransitionStyle = .coverVertical, presentationStyle: UIModalPresentationStyle = .fullScreen, transition: Transition? = nil) {
         self.transitionStyle = transitionStyle
         self.presentationStyle = presentationStyle
+        self.transition = transition
     }
 }
+
+// MARK: UIViewController
+public extension UIViewController {
+    public func go<T: Navigable>(to controllerType: T.Type, with params: T.Params? = nil, transitionType: TransitionType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
+        Router.shared.go(to: controllerType, from: self, with: params, transitionType: transitionType, animated: animated, completion: completion)
+    }
+}
+
+// MARK: Navigable
 public protocol NavigationParameters {}
 public protocol Navigable {
     associatedtype Params: NavigationParameters
@@ -36,12 +47,6 @@ public protocol Navigable {
     static var identifier: String { get }
     
     func configure(with params: Params?)
-}
-
-public extension UIViewController {
-    public func go<T: Navigable>(to controllerType: T.Type, with params: T.Params? = nil, presentationType: PresentationType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
-        Router.shared.go(to: controllerType, from: self, with: params, presentationType: presentationType, animated: animated, completion: completion)
-    }
 }
 
 public extension Navigable where Self: UIViewController {
