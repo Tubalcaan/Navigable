@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Navigable"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Navigable's aim is to simplify the navigation between UIViewControllers"
 
   # This description is used to generate tags and improve search results.
