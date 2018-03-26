@@ -61,7 +61,7 @@ To present SecondViewController modally:
 ```Swift
 @IBAction func buttonTapped(_ sender: Any) {
   numberOfTaps += 1 // count the number of taps
-  go(to: SecondViewController.self, with: SecondViewController.Params(numberOfTaps: numberOfTaps, delegate: self), presentationType: PresentationType.defaultModal) // presents coverVertical/fullScreen
+  go(to: SecondViewController.self, with: SecondViewController.Params(numberOfTaps: numberOfTaps, delegate: self), transitionType: TransitionType.defaultModal) // presents coverVertical/fullScreen
 }
 ```
 
@@ -104,8 +104,46 @@ The go(to:) has more parameters with default values.
 * animated: determines if the transition is animated
 * completion: determines the block that will be called after the transition
 
-The framework provides a PresentationConfiguration enum that enables you to specify the UIModalTransitionStyle and UIModalPresentationStyle for modal transitions.
-Just pass the custom PresentationConfiguration to the go(to:) function.
+The framework provides a TransitionConfiguration enum that enables you to specify the UIModalTransitionStyle and UIModalPresentationStyle for modal transitions.
+Just pass the custom TransitionConfiguration to the go(to:) function.
+
+### I want to *really* customize the transition
+You can set an object to the TransitionConfiguration transition attribute to make real custom transitions.
+This object must implement the Transition protocol, which contains:
+* transitionDuration(using:): returns the duration of the transition (see UIViewControllerAnimatedTransitioning)
+* animateTransition(using:): the transition code (see UIViewControllerAnimatedTransitioning)
+* willShow(): what to do before the go(to:) transition
+* willDismiss(): what to do before the goBack() transition
+
+Below is an example:
+```Swift
+class MyTransition: NSObject, Transition {
+    private let duration = 1.0 // used to determine the duration of the transition
+    private var presenting = true // used to determine if transition is presenting or dismissing the controller
+
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return duration
+    }
+
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+      // insert the transition code
+      // considering the presenting Bool
+      if presenting {
+
+      } else {
+
+      }
+    }
+
+    func willShow() {
+        presenting = true
+    }
+
+    func willDismiss() {
+        presenting = false
+    }
+}
+```
 
 # Installation
 ## Carthage
