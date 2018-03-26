@@ -111,10 +111,10 @@ Just pass the custom PresentationConfiguration to the go(to:) function.
 ## Carthage
 To install, simply add the following lines to your Cartfile :
 ```ruby
-github "Tubalcaan/Navigable" ~> 1.0
+github "Tubalcaan/Navigable" ~> 1.1
 ```
 ## Cocoapods
 To install, simply add the following lines to your Podfile :
 ```ruby
-pod 'Navigable', :git => 'https://github.com/Tubalcaan/Navigable.git', :tag => '1.0'
+pod 'Navigable', :git => 'https://github.com/Tubalcaan/Navigable.git', :tag => '1.1'
 ```
