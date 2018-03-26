@@ -1,7 +1,8 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 <br>
 
-[![Carthage compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat)](https://github.com/Carthage/Carthage)
+
  [![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-orange.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
 
 # Navigable
