@@ -15,6 +15,7 @@ Any time you want to push or present a view controller, you have to repeat a few
 The code is a bit different, and it's hard to search in XCode.
 
 # Using Navigable
+### Compatibility
 * Navigable works on platform 9.0+
 * This version is Swift4 compatible
 
