@@ -108,3 +108,8 @@ To install, simply add the following lines to your Cartfile :
 ```ruby
 github "Tubalcaan/Navigable" ~> 1.0
 ```
+## Cocoapods
+To install, simply add the following lines to your Podfile :
+```ruby
+pod 'Navigable', :git => 'https://github.com/Tubalcaan/Navigable.git', :branch => 'master'
+```
