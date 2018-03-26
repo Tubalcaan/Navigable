@@ -1,10 +1,9 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 <br>
-<br>
-<br>
+
 [![Carthage compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat)](https://github.com/Carthage/Carthage)
- [![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-orange.svg?style=flat)](https://github.com/Carthage/Carthage)
- 
+ [![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-orange.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+
 # Navigable
 Navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
 
