@@ -1,34 +1,39 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 <br>
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-orange.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat-square)](https://github.com/Carthage/Carthage)
+[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat-square)](https://github.com/CocoaPods/CocoaPods)
+
+[![Swift 4](https://img.shields.io/badge/Swift-4-blue.svg?style=flat-square)]()
+[![iOS 9](https://img.shields.io/badge/iOS->=9.0-blue.svg?style=flat-square)]()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Version 1.1](https://img.shields.io/badge/Version-1.1-ff69b4.svg?style=flat-square)]()
 
 # Navigable
 Navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
 
-### Segues are cool but... 🤔
+### 🔗 Segues are cool but... 🤔
 Segues are **very good tools** to represent visual connections between View controllers. But they have few drawbacks:
 * Segue names are **Strings**. Crashes may occur when using a Segue which name is not well configured in the storyboard
 * In huge apps, many screens can be accessed different ways and from multiple view controllers. Each connection is a new Segue in storyboards. This may cause the **octopus effect 🐙**, with eye-unreadable links between screens
 * Listing all ins and outs of a specific view controller may be a very difficult task to achieve, as many different Segue names may go to the same view controller
 * Sending parameters to the destination UIViewController usually needs to implement prepareForSegue:sender: and switch between all the different segues. Transitioning to a view controller **requires code in multiple places** (performSegue(withIdentifier:sender:) and prepareForSegue:sender:)
 
-### UIViewController programmatic instantiation is cool but... 🤔
+### ⌨️ UIViewController programmatic instantiation is cool but... 🤔
 Any time you want to push or present a view controller, you have to repeat a few lines of code (that I personnaly never remember). Every time you do this, you have to **check the storyboard name and storyboard ID** of the UIViewController.
 The code is a bit different, and it's hard to search in XCode.
 
 # Using Navigable
-### Compatibility
+### 🤖 Compatibility
 * Navigable works on platform 9.0+
 * This version is Swift4 compatible
 
-### Context
+### 📱 Example
 * Your app contains 2 UIViewControllers: FirstViewController and SecondViewController
+* Both UIViewControllers are designed in a storyboard
 * FirstViewController contains a button, that leads to SecondViewController. SecondViewController displays the number of taps on the button
 * FirstViewController is the delegate of SecondViewController
 
-### Implementation
+### 🛠 Implementation
 Add an extension to SecondViewController that implements the Navigable protocol. Navigable defines the input parameters of the destination view controller and a configure(with:) function to call before pushing the controller.
 
 ⚠️ In the basic use case, the storyboard ID of the UIViewController must be equal to its class name and the storyboard is considered to be the Main.storyboard. If your use case is different, read further
@@ -64,6 +69,7 @@ To present SecondViewController modally:
   go(to: SecondViewController.self, with: SecondViewController.Params(numberOfTaps: numberOfTaps, delegate: self), transitionType: TransitionType.defaultModal) // presents coverVertical/fullScreen
 }
 ```
+ℹ️ You don't need to design a UINavigationController in the storyboard to present the SecondViewController. The framework instantiates one for you when SecondViewController gets presented
 
 ### ⬅️ Pop/Dismiss
 Whatever the way you displayed SecondViewController (push/present), going back to FirstViewController is coded the same way
@@ -78,7 +84,7 @@ goBack()
 * Injection of wrong parameters type is a compilation error. You cannot miss a parameter or send the wrong one
 * Searching ins and outs of a specific UIViewController is easily made by searching "go(to:)" in the project
 
-# What more ?
+# 🎛 Customization ?
 #### My UIViewController has a custom storyboard ID
 Add a static read-only variable named "identifier" to the UIViewController (in the Navigable extension is more readable)
 ```Swift
@@ -107,7 +113,7 @@ The go(to:) has more parameters with default values.
 The framework provides a TransitionConfiguration enum that enables you to specify the UIModalTransitionStyle and UIModalPresentationStyle for modal transitions.
 Just pass the custom TransitionConfiguration to the go(to:) function.
 
-#### I want to *really* customize the transition
+#### I *really* want to customize the transition
 You can set an object to the TransitionConfiguration transition attribute to make real custom transitions.
 This object must implement the Transition protocol, which contains:
 * transitionDuration(using:): returns the duration of the transition (see UIViewControllerAnimatedTransitioning)
@@ -145,7 +151,7 @@ class MyTransition: NSObject, Transition {
 }
 ```
 
-# Installation
+# ⚙️ Installation
 ## Carthage
 To install, simply add the following lines to your Cartfile :
 ```ruby
