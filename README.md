@@ -15,6 +15,9 @@ Any time you want to push or present a view controller, you have to repeat a few
 The code is a bit different, and it's hard to search in XCode.
 
 # Using Navigable
+* Navigable works on platform 9.0+
+* This version is Swift4 compatible
+
 ### Context
 * Your app contains 2 UIViewControllers: FirstViewController and SecondViewController
 * FirstViewController contains a button, that leads to SecondViewController. SecondViewController displays the number of taps on the button
