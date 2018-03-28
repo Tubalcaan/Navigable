@@ -1,12 +1,12 @@
 <h3 align="center"><img src="navigable_logo.png" width=120></h3>
 <br>
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat-square)](https://github.com/Carthage/Carthage)
-[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat-square)](https://github.com/CocoaPods/CocoaPods)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
 
-[![Swift 4](https://img.shields.io/badge/Swift-4-blue.svg?style=flat-square)](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
-[![iOS 9](https://img.shields.io/badge/iOS->=9.0-blue.svg?style=flat-square)](https://en.wikipedia.org/wiki/IOS_9)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Version 1.1](https://img.shields.io/badge/Version-1.1-ff69b4.svg?style=flat-square)]()
+[![Swift 4](https://img.shields.io/badge/Swift-4-blue.svg?style=flat)](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
+[![iOS 9](https://img.shields.io/badge/iOS->=9.0-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_9)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Version 1.1](https://img.shields.io/badge/Version-1.1-ff69b4.svg?style=flat)]()
 
 # Navigable
 Navigable is a light framework aimed to **simplify the navigation** between UIViewControllers and the configuration of these UIViewControllers when the user gets from one to another one.
