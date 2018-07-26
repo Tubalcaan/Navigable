@@ -10,8 +10,9 @@
 		359261AB2068D038004C0818 /* Navigable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359261A12068D038004C0818 /* Navigable.framework */; };
 		359261B02068D038004C0818 /* NavigableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359261AF2068D038004C0818 /* NavigableTests.swift */; };
 		359261B22068D038004C0818 /* Navigable.h in Headers */ = {isa = PBXBuildFile; fileRef = 359261A42068D038004C0818 /* Navigable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		359261BD2068DC3C004C0818 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359261BB2068DC3C004C0818 /* Navigable.swift */; };
+		359261BD2068DC3C004C0818 /* MVPNavigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359261BB2068DC3C004C0818 /* MVPNavigable.swift */; };
 		359261BE2068DC3C004C0818 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359261BC2068DC3C004C0818 /* Router.swift */; };
+		35C18FBA21025F6700195EF6 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C18FB921025F6700195EF6 /* Navigator.swift */; };
 		35F1CDD72069208B0018EE66 /* Transitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F1CDD62069208B0018EE66 /* Transitionable.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +33,9 @@
 		359261AA2068D038004C0818 /* NavigableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		359261AF2068D038004C0818 /* NavigableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigableTests.swift; sourceTree = "<group>"; };
 		359261B12068D038004C0818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		359261BB2068DC3C004C0818 /* Navigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		359261BB2068DC3C004C0818 /* MVPNavigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPNavigable.swift; sourceTree = "<group>"; };
 		359261BC2068DC3C004C0818 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		35C18FB921025F6700195EF6 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		35F1CDD62069208B0018EE66 /* Transitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitionable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,11 +79,12 @@
 		359261A32068D038004C0818 /* Navigable */ = {
 			isa = PBXGroup;
 			children = (
-				359261BB2068DC3C004C0818 /* Navigable.swift */,
+				359261BB2068DC3C004C0818 /* MVPNavigable.swift */,
 				35F1CDD62069208B0018EE66 /* Transitionable.swift */,
 				359261BC2068DC3C004C0818 /* Router.swift */,
 				359261A42068D038004C0818 /* Navigable.h */,
 				359261A52068D038004C0818 /* Info.plist */,
+				35C18FB921025F6700195EF6 /* Navigator.swift */,
 			);
 			path = Navigable;
 			sourceTree = "<group>";
@@ -207,8 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				359261BE2068DC3C004C0818 /* Router.swift in Sources */,
+				35C18FBA21025F6700195EF6 /* Navigator.swift in Sources */,
 				35F1CDD72069208B0018EE66 /* Transitionable.swift in Sources */,
-				359261BD2068DC3C004C0818 /* Navigable.swift in Sources */,
+				359261BD2068DC3C004C0818 /* MVPNavigable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

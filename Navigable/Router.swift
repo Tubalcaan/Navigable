@@ -30,13 +30,22 @@ class Router: NSObject {
         return nil
     }
     
-    func go<T: Navigable>(to type: T.Type, from originVC: UIViewController, with params: T.Params?, transitionType: TransitionType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
-        let storyBoard = getStoryboard(T.storyboardIdentifier)
+    func go<T: MVPNavigable>(from originVC: UIViewController, to type: T.Type, with params: T.Presenter.Params?, transitionType: TransitionType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
+        let storyBoard = getStoryboard(T.xibIdentifier)
         if let navigable = storyBoard.instantiateViewController(withIdentifier: T.identifier) as? T {
-            navigable.configure(with: params)
+            navigable.presenter.configure(with: params)
+            navigable.presenter.view = navigable as? T.Presenter.View
             if let nextViewController = navigable as? UIViewController {
                 displayController(nextViewController, from: originVC, transitionType: transitionType, animated: animated, completion: completion)
             }
+        }
+    }
+    
+    func go<T: MVPNavigable>(from originVC: UIViewController, to navigable: T, with params: T.Presenter.Params?, completion: (() -> Swift.Void)? = nil) {
+        navigable.presenter.configure(with: params)
+        navigable.presenter.view = navigable as? T.Presenter.View
+        if let controller = navigable as? UIViewController {
+            displayController(controller, from: originVC, completion: completion)
         }
     }
     
