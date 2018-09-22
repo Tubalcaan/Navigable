@@ -92,20 +92,10 @@ public extension MVPNavigator {
     public static func go<T: MVPNavigable>(from fromVC: UIViewController, to controllerType: T.Type, with params: T.Presenter.Params? = nil, transitionType: TransitionType = .push, animated: Bool = true, completion: (() -> Swift.Void)? = nil) {
         Router.shared.go(from: fromVC, to: controllerType, with: params, transitionType: transitionType, animated: animated, completion: completion)
     }
-
-    public static func go<T: MVPNavigable>(using segue: UIStoryboardSegue, to navigable: T.Type, with params: T.Presenter.Params? = nil, completion: (() -> Swift.Void)? = nil) {
-        if segue.destination is T {
-            Router.shared.go(from: segue.source, to: navigable, with: params, completion: completion)
-        }
-    }
 }
 
 // MARK: Example
 class Navigator: MVPNavigator {
-    func toSecondScreen(segue: UIStoryboardSegue, params: MySecondPres.Params?) {
-        Navigator.go(using: segue, to: MySecondVC.self, with: params)
-    }
-    
     func toSecondScreen(with params: MySecondPres.Params?, from fromVC: UIViewController) {
         Navigator.go(from: fromVC, to: MySecondVC.self, with: params)
     }
